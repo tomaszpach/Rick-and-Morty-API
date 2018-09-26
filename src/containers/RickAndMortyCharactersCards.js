@@ -21,37 +21,42 @@ class RickAndMortyCharactersCards extends Component {
     }
 
     getResultsFromApi() {
-        axios.get(`${API_URL}?page=${this.state.page}`).then(({ data: { results } }) => {
-            this.setState({ characters: results, loading: false })
+        this.setState({loading: true});
+        axios.get(`${API_URL}?page=${this.state.page}`).then(({data: {results, info}}) => {
+            this.setState({characters: results, data: info, loading: false})
         });
     }
 
     getPageResults(nextPrev) {
         if (nextPrev === 'next') {
-            this.setState({ page: this.state.page + 1}, () => { this.getResultsFromApi() })
+            this.setState({page: this.state.page + 1}, () => {
+                this.getResultsFromApi()
+            })
         } else {
-            this.setState({ page: this.state.page - 1}, () => { this.getResultsFromApi() })
+            this.setState({page: this.state.page - 1}, () => {
+                this.getResultsFromApi()
+            })
         }
     }
 
     componentDidMount() {
-        axios.get(API_URL).then(({ data: { results, info } }) => {
-            this.setState({ characters: results, data: info, loading: false });
-        }).catch( error => {
-            this.setState({ error });
+        axios.get(API_URL).then(({data: {results, info}}) => {
+            this.setState({characters: results, data: info, loading: false});
+        }).catch(error => {
+            this.setState({error});
         });
     }
 
 
     render() {
-        const { characters, error, loading, data, page } = this.state;
+        const {characters, error, loading, data, page} = this.state;
         console.log(this.state.characters);
 
         return (
             <div>
                 <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
-                <CharactersInfo info={data} error={error} loading={loading} />
-                <CharactersCards characters={characters} error={error} loading={loading} />
+                <CharactersInfo info={data} error={error} loading={loading}/>
+                <CharactersCards characters={characters} error={error} loading={loading}/>
             </div>
         )
     }
