@@ -28,15 +28,21 @@ class RickAndMortyCharactersCards extends Component {
     }
 
     getPageResults(nextPrev) {
-        if (nextPrev === 'next') {
+        if (nextPrev === 'next' && this.state.page < this.state.data.pages) {
             this.setState({page: this.state.page + 1}, () => {
                 this.getResultsFromApi()
             })
-        } else {
+        }
+
+        if (nextPrev !== 'next' && this.state.page > 1) {
             this.setState({page: this.state.page - 1}, () => {
                 this.getResultsFromApi()
             })
         }
+    }
+
+    updatePage(e) {
+        this.setState({page: parseInt(e.target.value)});
     }
 
     componentDidMount() {
@@ -50,10 +56,11 @@ class RickAndMortyCharactersCards extends Component {
 
     render() {
         const {characters, error, loading, data, page} = this.state;
-        console.log(this.state.characters);
 
         return (
             <div>
+                <input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />
+                <button onClick={() => this.getResultsFromApi()}>change!</button>
                 <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
                 <CharactersInfo info={data} error={error} loading={loading}/>
                 <CharactersCards characters={characters} error={error} loading={loading}/>
