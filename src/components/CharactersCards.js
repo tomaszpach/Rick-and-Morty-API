@@ -8,17 +8,16 @@ const CharactersCards = ({characters, error, loading}) => {
     if (error) {
        return <FetchError />
     } else if (loading) {
-        // return LoadingSpinner
         return <LoadingSpinner />
     }
     return (
-        characters.map(({name, image, species, gender}) => (
+        characters.map(({name, image, species, gender, id}) => (
                 <CharacterCard
                     name={name}
                     image={image}
                     species={species}
                     gender={gender}
-                    key={name}
+                    key={id}
                 />
             )
         )
