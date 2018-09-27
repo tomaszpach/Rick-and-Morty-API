@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
 import CharactersCards from './components/Homepage/CharactersCards';
-import CharacterDetails from './CharacterDetails';
+import CharacterDetails from './containers/ContainerCharacterDetails';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
