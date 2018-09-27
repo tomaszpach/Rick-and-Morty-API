@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import CharactersCards from '../components/CharactersCards';
-import CharactersInfo from "../components/CharactersInfo/CharactersInfo";
-import Navigation from "../components/Navigation/Navigation";
+import CharactersInfo from "../components/Homepage/CharactersInfo/CharactersInfo";
+import Navigation from "../components/Homepage/Navigation/Navigation";
 
 const API_URL = "https://rickandmortyapi.com/api/character/";
 
@@ -12,9 +12,9 @@ class RickAndMortyCharactersCards extends Component {
         super(props);
         this.state = {
             characters: [],
+            character: [],
             data: [],
             page: 1,
-            buttonText: 'next page',
             loading: true,
             error: null
         };
@@ -22,8 +22,11 @@ class RickAndMortyCharactersCards extends Component {
 
     getResultsFromApi() {
         this.setState({loading: true});
+
         axios.get(`${API_URL}?page=${this.state.page}`).then(({data: {results, info}}) => {
             this.setState({characters: results, data: info, loading: false})
+        }).catch(error => {
+            this.setState({error});
         });
     }
 
@@ -42,14 +45,14 @@ class RickAndMortyCharactersCards extends Component {
     }
 
     updatePage(e) {
-        this.setState({page: parseInt(e.target.value)});
+        this.setState({page: parseInt(e.target.value, 10)});
     }
 
     componentDidMount() {
-        axios.get(API_URL).then(({data: {results, info}}) => {
-            this.setState({characters: results, data: info, loading: false});
-        }).catch(error => {
-            this.setState({error});
+        this.getResultsFromApi();
+
+        axios.get(`${API_URL}2`).then(({data}) => {
+            this.setState({character: data});
         });
     }
 
@@ -61,6 +64,7 @@ class RickAndMortyCharactersCards extends Component {
             <div>
                 <input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />
                 <button onClick={() => this.getResultsFromApi()}>change!</button>
+                <button onClick={() => console.log(this.state.character)}>details</button>
                 <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
                 <CharactersInfo info={data} error={error} loading={loading}/>
                 <CharactersCards characters={characters} error={error} loading={loading}/>

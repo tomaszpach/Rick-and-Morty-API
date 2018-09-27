@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CharacterCard from './CharacterCard/CharacterCard';
+import CharacterCard from './Homepage/CharacterCard/CharacterCard';
 import FetchError from "./shared/FetchError";
 import LoadingSpinner from "./shared/LoadingSpinner";
 

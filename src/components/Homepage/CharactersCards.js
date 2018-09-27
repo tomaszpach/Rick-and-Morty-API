@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../../App.css';
 
-import RickAndMortyCharactersCards from './containers/RickAndMortyCharactersCards';
+import RickAndMortyCharactersCards from '../../containers/RickAndMortyCharactersCards';
 
-class App extends Component {
+class CharactersCards extends Component {
     render() {
         return (
             <div className="App">
@@ -13,4 +13,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default CharactersCards;
