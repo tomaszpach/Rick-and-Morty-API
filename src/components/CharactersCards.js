@@ -6,22 +6,26 @@ import LoadingSpinner from "./shared/LoadingSpinner";
 
 const CharactersCards = ({characters, error, loading}) => {
     if (error) {
-       return <FetchError />
+        return <FetchError/>
     } else if (loading) {
-        return <LoadingSpinner />
+        return <LoadingSpinner/>
     }
     return (
-        characters.map(({name, image, species, gender, id}) => (
-                <CharacterCard
-                    name={name}
-                    image={image}
-                    species={species}
-                    gender={gender}
-                    id={id}
-                    key={id}
-                />
-            )
-        )
+        <div className="character-cards-wrapper">
+            {
+                characters.map(({name, image, species, gender, id}) => (
+                        <CharacterCard
+                            name={name}
+                            image={image}
+                            species={species}
+                            gender={gender}
+                            id={id}
+                            key={id}
+                        />
+                    )
+                )
+            }
+        </div>
     )
 };
 
