@@ -17,6 +17,7 @@ const CharactersCards = ({characters, error, loading}) => {
                     image={image}
                     species={species}
                     gender={gender}
+                    id={id}
                     key={id}
                 />
             )
