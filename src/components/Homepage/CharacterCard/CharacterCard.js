@@ -3,12 +3,13 @@ import CharacterName from './CharacterName';
 import CharacterImage from './CharacterImage';
 import CharacterSpecies from "./CharacterSpecies";
 import CharacterGender from "./CharacterGender";
+import { Link } from 'react-router-dom';
 
 const CharacterCard = ({name, image, species, gender, id}) => {
-    const str = name.replace(/\s/g, '_');
+    const _name = name.replace(/\s/g, '_');
 
     return (
-        <a data-for={str + ' ' + id} href={`/character/${id}`}>
+        <Link data-for={_name} data-id={id} to={`/character/${id}`}>
             <div className="character-card">
                 <CharacterImage image={image} />
                 <div className="details">
@@ -17,7 +18,7 @@ const CharacterCard = ({name, image, species, gender, id}) => {
                     <CharacterGender gender={gender} />
                 </div>
             </div>
-        </a>
+        </Link>
     );
 };
 
