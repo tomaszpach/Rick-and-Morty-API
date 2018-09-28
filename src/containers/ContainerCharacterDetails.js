@@ -30,7 +30,7 @@ class ContainerCharacterDetails extends Component {
     }
 
     render() {
-        const { name, status, image, gender, species } = this.state.character;
+        const { name, status, image } = this.state.character;
 
         return (
             <div className="App CharacterDetails">
