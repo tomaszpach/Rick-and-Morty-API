@@ -6,6 +6,10 @@ import CharactersCards from './components/Homepage/CharactersCards';
 import CharacterDetails from './containers/ContainerCharacterDetails';
 import registerServiceWorker from './registerServiceWorker';
 
+// todo prepare solid navigation and pagination
+// todo rebuild homepage
+// todo RWD!
+// todo rebuild detail page
 ReactDOM.render((
     <BrowserRouter>
         <div>
