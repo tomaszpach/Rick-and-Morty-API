@@ -6,6 +6,8 @@ import CharactersCards from './components/Homepage/CharactersCards';
 import CharacterDetails from './containers/ContainerCharacterDetails';
 import registerServiceWorker from './registerServiceWorker';
 
+// used API: https://rickandmortyapi.com/
+
 // todo prepare solid navigation and pagination
 // todo rebuild homepage
 // todo RWD!
