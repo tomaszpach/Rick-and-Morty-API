@@ -14,10 +14,14 @@ class RickAndMortyCharactersCards extends Component {
             characters: [],
             character: [],
             data: [],
-            page: 1,
+            page: parseInt(this.props.id, 10) || 1,
             loading: true,
             error: null
         };
+    }
+
+    updateWindowHistory() {
+        window.history.pushState("object or string", "Title", `/${this.state.page}`);
     }
 
     getResultsFromApi() {
@@ -28,18 +32,22 @@ class RickAndMortyCharactersCards extends Component {
         }).catch(error => {
             this.setState({error});
         });
+
+        this.updateWindowHistory();
     }
 
     getPageResults(nextPrev) {
         if (nextPrev === 'next' && this.state.page < this.state.data.pages) {
             this.setState({page: this.state.page + 1}, () => {
-                this.getResultsFromApi()
+                this.getResultsFromApi();
+                this.updateWindowHistory();
             })
         }
 
         if (nextPrev !== 'next' && this.state.page > 1) {
             this.setState({page: this.state.page - 1}, () => {
-                this.getResultsFromApi()
+                this.getResultsFromApi();
+                this.updateWindowHistory();
             })
         }
     }
@@ -50,10 +58,6 @@ class RickAndMortyCharactersCards extends Component {
 
     componentDidMount() {
         this.getResultsFromApi();
-
-        axios.get(`${API_URL}2`).then(({data}) => {
-            this.setState({character: data});
-        });
     }
 
 
@@ -64,7 +68,6 @@ class RickAndMortyCharactersCards extends Component {
             <div>
                 <input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />
                 <button onClick={() => this.getResultsFromApi()}>change!</button>
-                <button onClick={() => console.log(this.state.character)}>details</button>
                 <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
                 <CharactersInfo info={data} error={error} loading={loading}/>
                 <CharactersCards characters={characters} error={error} loading={loading}/>

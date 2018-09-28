@@ -7,7 +7,7 @@ class CharactersCards extends Component {
     render() {
         return (
             <div className="App">
-                <RickAndMortyCharactersCards />
+                <RickAndMortyCharactersCards id={this.props.match.params.id} />
             </div>
         );
     }
