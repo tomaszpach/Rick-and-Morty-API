@@ -21,7 +21,7 @@ class RickAndMortyCharactersCards extends Component {
     }
 
     updateWindowHistory() {
-        window.history.pushState("object or string", "Title", `/${this.state.page}`);
+        window.history.pushState("object or string", "Title", `/page/${this.state.page}`);
     }
 
     getResultsFromApi() {
