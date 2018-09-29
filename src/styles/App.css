@@ -23,17 +23,23 @@ header {
   border: 5px dotted #0eabca;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
   padding: 15px; }
-
-img {
-  border: 4px dotted #0eabca;
-  border-radius: 50%; }
-
-.details {
-  border: 4px dotted #0eabca;
-  flex: 1;
-  margin-left: 15px;
-  padding: 15px; }
+  @media (min-width: 576px) {
+    .character-card {
+      flex-direction: row; } }
+  .character-card img {
+    width: 100%; }
+    @media (min-width: 576px) {
+      .character-card img {
+        border: 4px dotted #0eabca;
+        border-radius: 50%;
+        width: auto; } }
+  .character-card .details {
+    flex: 1;
+    margin-left: 15px;
+    padding: 15px;
+    width: 100%; }
 
 /*# sourceMappingURL=App.css.map */
