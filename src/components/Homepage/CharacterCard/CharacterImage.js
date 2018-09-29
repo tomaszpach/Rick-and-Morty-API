@@ -1,5 +1,5 @@
 import React from 'react';
 
-const CharacterImage = ({image}) => <img src={image} alt="test"/>;
+const CharacterImage = ({image, name}) => <img src={image} alt={name}/>;
 
 export default CharacterImage;
