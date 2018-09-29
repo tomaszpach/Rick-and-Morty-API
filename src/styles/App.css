@@ -1,0 +1,38 @@
+header {
+  display: flex;
+  height: 40px;
+  background-color: #0eabca; }
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0; }
+
+.app {
+  padding: 15px; }
+
+.async-status-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 50vh; }
+
+.character-card {
+  align-items: center;
+  border: 5px dotted #0eabca;
+  border-radius: 5px;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 15px; }
+
+img {
+  border: 4px dotted #0eabca;
+  border-radius: 50%; }
+
+.details {
+  flex: 1;
+  border: 4px dotted #0eabca;
+  margin-left: 15px;
+  padding: 15px; }
+
+/*# sourceMappingURL=App.css.map */

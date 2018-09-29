@@ -1,0 +1,21 @@
+// Global styles
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// Typography
+
+.app {
+  padding: 15px;
+}
+
+// Global used classes
+
+.async-status-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 50vh;
+}

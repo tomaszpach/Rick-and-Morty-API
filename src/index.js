@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import './index.css';
+import './styles/App.css';
 import CharactersCards from './components/Homepage/CharactersCards';
 import CharacterDetails from './containers/ContainerCharacterDetails';
 import registerServiceWorker from './registerServiceWorker';
+import Header from "./components/Header/Header";
 
 // used API: https://rickandmortyapi.com/
 
@@ -15,6 +16,7 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render((
     <BrowserRouter>
         <div>
+            <Header />
             <Route exact path="/"  component={CharactersCards} />
             <Route exact path="/page/:id"  component={CharactersCards} />
             <Route path="/character/:id" component={CharacterDetails} />
