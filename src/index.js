@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import './styles/App.css';
+import {BrowserRouter, Route} from 'react-router-dom';
+import registerServiceWorker from './registerServiceWorker';
+
+import Header from "./components/Header/Header";
 import Homepage from './components/Homepage/Homepage';
 import CharacterDetails from './containers/ContainerCharacterDetails';
-import registerServiceWorker from './registerServiceWorker';
-import Header from "./components/Header/Header";
+
+import './styles/App.css';
+import { ROOT_URL } from './CONST';
 
 // used API: https://rickandmortyapi.com/
 
@@ -16,11 +19,11 @@ import Header from "./components/Header/Header";
 ReactDOM.render((
     <BrowserRouter>
         <div className="app-wrapper">
-            <Header />
+            <Header/>
             <div className="app">
-                <Route exact path="/"  component={Homepage} />
-                <Route exact path="/page/:id"  component={Homepage} />
-                <Route path="/character/:id" component={CharacterDetails} />
+                <Route exact path={ROOT_URL} component={Homepage}/>
+                <Route path={`${ROOT_URL}page/:id`} component={Homepage}/>
+                <Route path={`${ROOT_URL}character/:id`} component={CharacterDetails}/>
             </div>
         </div>
     </BrowserRouter>

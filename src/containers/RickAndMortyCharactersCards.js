@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import CharactersList from '../components/CharactersList';
-// import Navigation from "../components/Homepage/Navigation/Navigation";
+import Navigation from "../components/Homepage/Navigation/Navigation";
 
-const API_URL = "https://rickandmortyapi.com/api/character/";
+import { ROOT_URL, API_URL } from '../CONST';
 
 class RickAndMortyCharactersCards extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class RickAndMortyCharactersCards extends Component {
     }
 
     updateWindowHistory() {
-        window.history.pushState("object or string", "Title", `/page/${this.state.page}`);
+        this.props.history.push(`${ROOT_URL}page/${this.state.page}`);
     }
 
     getResultsFromApi() {
@@ -51,9 +51,9 @@ class RickAndMortyCharactersCards extends Component {
         }
     }
 
-    // updatePage(e) {
-    //     this.setState({page: parseInt(e.target.value, 10)});
-    // }
+    updatePage(e) {
+        this.setState({page: parseInt(e.target.value, 10)});
+    }
 
     componentDidMount() {
         this.getResultsFromApi();
@@ -61,13 +61,13 @@ class RickAndMortyCharactersCards extends Component {
 
 
     render() {
-        const {characters, error, loading} = this.state;
+        const {characters, error, loading, page} = this.state;
 
         return (
             <div>
-                {/*<input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />*/}
-                {/*<button onClick={() => this.getResultsFromApi()}>change!</button>*/}
-                {/*<Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>*/}
+                <input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />
+                <button onClick={() => this.getResultsFromApi()}>change!</button>
+                <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
                 <CharactersList characters={characters} error={error} loading={loading}/>
             </div>
         )

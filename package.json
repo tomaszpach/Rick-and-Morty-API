@@ -2,6 +2,7 @@
   "name": "rick-and-morty-api",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/rick-and-morty/build/",
   "dependencies": {
     "axios": "^0.18.0",
     "react": "^16.5.2",
