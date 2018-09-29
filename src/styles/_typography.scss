@@ -1,3 +1,9 @@
+// Colors
+// Todo this probably shouldnt be here - do something with that
+
+$main: #0eabca;
+
+
 // Global styles
 body {
   font-family: sans-serif;
@@ -18,4 +24,5 @@ body {
   display: flex;
   justify-content: center;
   min-height: 50vh;
+  width: 100%;
 }
