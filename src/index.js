@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/App.css';
-import CharactersCards from './components/Homepage/CharactersCards';
+import Homepage from './components/Homepage/Homepage';
 import CharacterDetails from './containers/ContainerCharacterDetails';
 import registerServiceWorker from './registerServiceWorker';
 import Header from "./components/Header/Header";
@@ -18,8 +18,8 @@ ReactDOM.render((
         <div className="app-wrapper">
             <Header />
             <div className="app">
-                <Route exact path="/"  component={CharactersCards} />
-                <Route exact path="/page/:id"  component={CharactersCards} />
+                <Route exact path="/"  component={Homepage} />
+                <Route exact path="/page/:id"  component={Homepage} />
                 <Route path="/character/:id" component={CharacterDetails} />
             </div>
         </div>

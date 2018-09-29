@@ -17,8 +17,8 @@ const CharactersList = ({characters, error, loading}) => {
                         <CharacterCard
                             name={name}
                             image={image}
-                            species={species}
-                            gender={gender}
+                            // species={species}
+                            // gender={gender}
                             id={id}
                             key={id}
                         />

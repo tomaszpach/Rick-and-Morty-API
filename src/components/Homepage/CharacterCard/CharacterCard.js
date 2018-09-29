@@ -14,8 +14,8 @@ const CharacterCard = ({name, image, species, gender, id}) => {
                 <CharacterImage image={image} />
                 <div className="details">
                     <CharacterName name={name} />
-                    <CharacterSpecies species={species} />
-                    <CharacterGender gender={gender} />
+                    {/*<CharacterSpecies species={species} />*/}
+                    {/*<CharacterGender gender={gender} />*/}
                 </div>
             </div>
         </Link>

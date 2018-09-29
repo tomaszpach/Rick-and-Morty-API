@@ -1,3 +1,14 @@
+.character-cards-wrapper {
+  a {
+    color: $main;
+    text-decoration: none;
+
+    &:visited {
+      color: $main;
+    }
+  }
+}
+
 .character-card {
   align-items: center;
   border: 5px dotted $main;

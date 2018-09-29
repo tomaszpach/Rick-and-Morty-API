@@ -65,9 +65,9 @@ class RickAndMortyCharactersCards extends Component {
 
         return (
             <div>
-                <input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />
-                <button onClick={() => this.getResultsFromApi()}>change!</button>
-                <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
+                {/*<input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />*/}
+                {/*<button onClick={() => this.getResultsFromApi()}>change!</button>*/}
+                {/*<Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>*/}
                 <CharactersList characters={characters} error={error} loading={loading}/>
             </div>
         )

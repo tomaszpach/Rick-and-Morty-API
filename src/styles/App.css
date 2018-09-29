@@ -3,6 +3,12 @@ body {
   margin: 0;
   padding: 0; }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #0eabca; }
+
+p {
+  color: #0eabca; }
+
 .app {
   padding: 15px; }
 
@@ -17,6 +23,12 @@ header {
   background-color: #0eabca;
   display: flex;
   height: 40px; }
+
+.character-cards-wrapper a {
+  color: #0eabca;
+  text-decoration: none; }
+  .character-cards-wrapper a:visited {
+    color: #0eabca; }
 
 .character-card {
   align-items: center;

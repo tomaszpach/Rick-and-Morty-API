@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import RickAndMortyCharactersCards from '../../containers/RickAndMortyCharactersCards';
 
-class CharactersCards extends Component {
+class Homepage extends Component {
     render() {
         return (
             <div className="characters-list">
@@ -12,4 +12,4 @@ class CharactersCards extends Component {
     }
 }
 
-export default CharactersCards;
+export default Homepage;
