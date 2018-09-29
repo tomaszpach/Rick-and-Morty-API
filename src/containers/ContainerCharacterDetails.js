@@ -19,7 +19,6 @@ class ContainerCharacterDetails extends Component {
 
         axios.get(API_URL + this.state.id).then(({data}) => {
             this.setState({character: data, loading: false});
-            console.log(data);
         }).catch(error => {
             this.setState({error});
         });
@@ -30,14 +29,12 @@ class ContainerCharacterDetails extends Component {
     }
 
     render() {
-        const { name, status, image } = this.state.character;
+        const { loading, character } = this.state;
 
         return (
             <CharacterDetails
-                loading={this.state.loading}
-                name={name}
-                status={status}
-                image={image}
+                loading={loading}
+                character={character}
             />
         );
     }
