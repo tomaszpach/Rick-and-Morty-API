@@ -8,9 +8,11 @@ const CharacterDetails = ({loading, name, status, image}) => {
 
     return (
         <div className="character-card">
-            <h2>{name}</h2>
-            <p>Is alive: <b>{status}</b></p>
             <img src={image} alt={name} />
+            <div className="details">
+                <h2>{name}</h2>
+                <p>Is alive: <b>{status}</b></p>
+            </div>
         </div>
     );
 };
