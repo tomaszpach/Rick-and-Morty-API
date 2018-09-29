@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import CharactersList from '../components/CharactersList';
-import Navigation from "../components/Homepage/Navigation/Navigation";
+// import Navigation from "../components/Homepage/Navigation/Navigation";
 
 const API_URL = "https://rickandmortyapi.com/api/character/";
 
@@ -51,9 +51,9 @@ class RickAndMortyCharactersCards extends Component {
         }
     }
 
-    updatePage(e) {
-        this.setState({page: parseInt(e.target.value, 10)});
-    }
+    // updatePage(e) {
+    //     this.setState({page: parseInt(e.target.value, 10)});
+    // }
 
     componentDidMount() {
         this.getResultsFromApi();
@@ -61,7 +61,7 @@ class RickAndMortyCharactersCards extends Component {
 
 
     render() {
-        const {characters, error, loading, data, page} = this.state;
+        const {characters, error, loading} = this.state;
 
         return (
             <div>

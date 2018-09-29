@@ -1,8 +1,6 @@
 import React from 'react';
 import CharacterName from './CharacterName';
 import CharacterImage from './CharacterImage';
-import CharacterSpecies from "./CharacterSpecies";
-import CharacterGender from "./CharacterGender";
 import { Link } from 'react-router-dom';
 
 const CharacterCard = ({name, image, species, gender, id}) => {
@@ -14,8 +12,6 @@ const CharacterCard = ({name, image, species, gender, id}) => {
                 <CharacterImage image={image} />
                 <div className="details">
                     <CharacterName name={name} />
-                    {/*<CharacterSpecies species={species} />*/}
-                    {/*<CharacterGender gender={gender} />*/}
                 </div>
             </div>
         </Link>
