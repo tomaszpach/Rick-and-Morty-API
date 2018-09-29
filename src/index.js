@@ -15,11 +15,13 @@ import Header from "./components/Header/Header";
 // todo rebuild detail page
 ReactDOM.render((
     <BrowserRouter>
-        <div>
+        <div className="app-wrapper">
             <Header />
-            <Route exact path="/"  component={CharactersCards} />
-            <Route exact path="/page/:id"  component={CharactersCards} />
-            <Route path="/character/:id" component={CharacterDetails} />
+            <div className="app">
+                <Route exact path="/"  component={CharactersCards} />
+                <Route exact path="/page/:id"  component={CharactersCards} />
+                <Route path="/character/:id" component={CharacterDetails} />
+            </div>
         </div>
     </BrowserRouter>
 ), document.getElementById('root'));

@@ -105,7 +105,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Updating to New Releases
 
-Create React CharactersCards is divided into two packages:
+Create React CharacterCard is divided into two packages:
 
 * `create-react-app` is a global command-line utility that you use to create new projects.
 * `react-scripts` is a development dependency in the generated projects (including this one).
@@ -253,7 +253,7 @@ You would need to install an ESLint plugin for your editor first. Then, add a fi
 
 Now your editor should report the linting warnings.
 
-Note that even if you edit your `.eslintrc` file further, these changes will **only affect the editor integration**. They won’t affect the terminal and in-browser lint output. This is because Create React CharactersCards intentionally provides a minimal set of rules that find common mistakes.
+Note that even if you edit your `.eslintrc` file further, these changes will **only affect the editor integration**. They won’t affect the terminal and in-browser lint output. This is because Create React CharacterCard intentionally provides a minimal set of rules that find common mistakes.
 
 If you want to enforce a coding style for your project, consider using [Prettier](https://github.com/jlongster/prettier) instead of ESLint style rules.
 
@@ -261,7 +261,7 @@ If you want to enforce a coding style for your project, consider using [Prettier
 
 **This feature is currently only supported by [Visual Studio Code](https://code.visualstudio.com) and [WebStorm](https://www.jetbrains.com/webstorm/).**
 
-Visual Studio Code and WebStorm support debugging out of the box with Create React CharactersCards. This enables you as a developer to write and debug your React code without leaving the editor, and most importantly it enables you to have a continuous development workflow, where context switching is minimal, as you don’t have to switch between tools.
+Visual Studio Code and WebStorm support debugging out of the box with Create React CharacterCard. This enables you as a developer to write and debug your React code without leaving the editor, and most importantly it enables you to have a continuous development workflow, where context switching is minimal, as you don’t have to switch between tools.
 
 ### Visual Studio Code
 
@@ -354,7 +354,7 @@ Next you might want to integrate Prettier in your favorite editor. Read the sect
 
 ## Changing the Page `<title>`
 
-You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React CharactersCards” to anything else.
+You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React CharacterCard” to anything else.
 
 Note that normally you wouldn’t edit files in the `public` folder very often. For example, [adding a stylesheet](#adding-a-stylesheet) is done without touching the HTML.
 
@@ -364,7 +364,7 @@ If you use a custom server for your app in production and want to modify the tit
 
 ## Installing a Dependency
 
-The generated project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React CharactersCards as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
+The generated project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React CharacterCard as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
 
 ```sh
 npm install --save react-router
@@ -576,9 +576,9 @@ Then in `package.json`, add the following lines to `scripts`:
 
 >Note: To use a different preprocessor, replace `build-css` and `watch-css` commands according to your preprocessor’s documentation.
 
-Now you can rename `src/CharactersCards.css` to `src/CharactersCards.scss` and run `npm run watch-css`. The watcher will find every Sass file in `src` subdirectories, and create a corresponding CSS file next to it, in our case overwriting `src/CharactersCards.css`. Since `src/CharactersCards.jstersCards.js` still imports `src/CharactersCards.css`, the styles become a part of your application. You can now edit `src/CharactersCards.scss`, and `src/CharactersCards.css` will be regenerated.
+Now you can rename `src/CharacterCard.css` to `src/CharacterCard.scss` and run `npm run watch-css`. The watcher will find every Sass file in `src` subdirectories, and create a corresponding CSS file next to it, in our case overwriting `src/CharacterCard.css`. Since `src/CharacterCard.jstersCards.js` still imports `src/CharacterCard.css`, the styles become a part of your application. You can now edit `src/CharacterCard.scss`, and `src/CharacterCard.css` will be regenerated.
 
-To share variables between Sass files, you can use Sass imports. For example, `src/CharactersCards.scss` and other component style files could include `@import "./shared.scss";` with variable definitions.
+To share variables between Sass files, you can use Sass imports. For example, `src/CharacterCard.scss` and other component style files could include `@import "./shared.scss";` with variable definitions.
 
 To enable importing files without using relative paths, you can add the  `--include-path` option to the command in `package.json`.
 
@@ -713,7 +713,7 @@ Inside `index.html`, you can use it like this:
 
 Only files inside the `public` folder will be accessible by `%PUBLIC_URL%` prefix. If you need to use a file from `src` or `node_modules`, you’ll have to copy it there to explicitly specify your intention to make this file a part of the build.
 
-When you run `npm run build`, Create React CharactersCards will substitute `%PUBLIC_URL%` with a correct absolute path so your project works even if you use client-side routing or host it at a non-root URL.
+When you run `npm run build`, Create React CharacterCard will substitute `%PUBLIC_URL%` with a correct absolute path so your project works even if you use client-side routing or host it at a non-root URL.
 
 In JavaScript code, you can use `process.env.PUBLIC_URL` for similar purposes:
 
@@ -760,7 +760,7 @@ Alternatively, you can force the linter to ignore any line by adding `// eslint-
 
 ## Adding Bootstrap
 
-You don’t have to use [React Bootstrap](https://react-bootstrap.github.io) together with React but it is a popular library for integrating Bootstrap with React apps. If you need it, you can integrate it with Create React CharactersCards by following these steps:
+You don’t have to use [React Bootstrap](https://react-bootstrap.github.io) together with React but it is a popular library for integrating Bootstrap with React apps. If you need it, you can integrate it with Create React CharacterCard by following these steps:
 
 Install React Bootstrap and Bootstrap from npm. React Bootstrap does not include Bootstrap CSS so this needs to be installed as well:
 
@@ -783,7 +783,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 // components takes precedence over default styles.
 ```
 
-Import required React Bootstrap components within ```src/CharactersCards.jstersCards.js``` file or your custom component files:
+Import required React Bootstrap components within ```src/CharacterCard.jstersCards.js``` file or your custom component files:
 
 ```js
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
@@ -806,24 +806,24 @@ Here is an example of adding a [customized Bootstrap](https://medium.com/@tacoma
 
 Flow is a static type checker that helps you write code with fewer bugs. Check out this [introduction to using static types in JavaScript](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb) if you are new to this concept.
 
-Recent versions of [Flow](http://flowtype.org/) work with Create React CharactersCards projects out of the box.
+Recent versions of [Flow](http://flowtype.org/) work with Create React CharacterCard projects out of the box.
 
-To add Flow to a Create React CharactersCards project, follow these steps:
+To add Flow to a Create React CharacterCard project, follow these steps:
 
 1. Run `npm install --save flow-bin` (or `yarn add flow-bin`).
 2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
 3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
-4. Add `// @flow` to any files you want to type check (for example, to `src/CharactersCards.jstersCards.js`).
+4. Add `// @flow` to any files you want to type check (for example, to `src/CharacterCard.jstersCards.js`).
 
 Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
 You can optionally use an IDE like [Nuclide](https://nuclide.io/docs/languages/flow/) for a better integrated experience.
-In the future we plan to integrate it into Create React CharactersCards even more closely.
+In the future we plan to integrate it into Create React CharacterCard even more closely.
 
 To learn more about Flow, check out [its documentation](https://flowtype.org/).
 
 ## Adding a Router
 
-Create React CharactersCards doesn't prescribe a specific routing solution, but [React Router](https://reacttraining.com/react-router/) is the most popular one.
+Create React CharacterCard doesn't prescribe a specific routing solution, but [React Router](https://reacttraining.com/react-router/) is the most popular one.
 
 To add it, run:
 
@@ -837,7 +837,7 @@ Alternatively you may use `yarn`:
 yarn add react-router-dom
 ```
 
-To try it, delete all the code in `src/CharactersCards.jstersCards.js` and replace it with any of the examples on its website. The [Basic Example](https://reacttraining.com/react-router/web/example/basic) is a good place to get started.
+To try it, delete all the code in `src/CharacterCard.jstersCards.js` and replace it with any of the examples on its website. The [Basic Example](https://reacttraining.com/react-router/web/example/basic) is a good place to get started.
 
 Note that [you may need to configure your production server to support client-side routing](#serving-apps-with-client-side-routing) before deploying your app.
 
@@ -849,7 +849,7 @@ Your project can consume variables declared in your environment as if they were 
 default you will have `NODE_ENV` defined for you, and any other environment variables starting with
 `REACT_APP_`.
 
-**The environment variables are embedded during the build time**. Since Create React CharactersCards produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, just like [described here](#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
+**The environment variables are embedded during the build time**. Since Create React CharacterCard produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, just like [described here](#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
 
 >Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid accidentally [exposing a private key on the machine that could have the same name](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
 
@@ -1003,7 +1003,7 @@ REACT_APP_BAR=$DOMAIN/bar
 ## Can I Use Decorators?
 
 Many popular libraries use [decorators](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841) in their documentation.<br>
-Create React CharactersCards doesn’t support decorator syntax at the moment because:
+Create React CharacterCard doesn’t support decorator syntax at the moment because:
 
 * It is an experimental proposal and is subject to change.
 * The current specification version is not officially supported by Babel.
@@ -1015,11 +1015,11 @@ Please refer to these two threads for reference:
 * [#214](https://github.com/facebookincubator/create-react-app/issues/214)
 * [#411](https://github.com/facebookincubator/create-react-app/issues/411)
 
-Create React CharactersCards will add decorator support when the specification advances to a stable stage.
+Create React CharacterCard will add decorator support when the specification advances to a stable stage.
 
 ## Fetching Data with AJAX Requests
 
-React doesn't prescribe a specific approach to data fetching, but people commonly use either a library like [axios](https://github.com/axios/axios) or the [`fetch()` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) provided by the browser. Conveniently, Create React CharactersCards includes a polyfill for `fetch()` so you can use it without worrying about the browser support.
+React doesn't prescribe a specific approach to data fetching, but people commonly use either a library like [axios](https://github.com/axios/axios) or the [`fetch()` API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) provided by the browser. Conveniently, Create React CharacterCard includes a polyfill for `fetch()` so you can use it without worrying about the browser support.
 
 The global `fetch` function allows to easily makes AJAX requests. It takes in a URL as an input and returns a `Promise` that resolves to a `Response` object. You can find more information about `fetch` [here](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
@@ -1225,7 +1225,7 @@ Note that the server will use a self-signed certificate, so your web browser wil
 
 ## Generating Dynamic `<meta>` Tags on the Server
 
-Since Create React CharactersCards doesn’t support server rendering, you might be wondering how to make `<meta>` tags dynamic and reflect the current URL. To solve this, we recommend to add placeholders into the HTML, like this:
+Since Create React CharacterCard doesn’t support server rendering, you might be wondering how to make `<meta>` tags dynamic and reflect the current URL. To solve this, we recommend to add placeholders into the HTML, like this:
 
 ```html
 <!doctype html>
@@ -1269,13 +1269,13 @@ Then, on the server, you can replace `__SERVER_DATA__` with a JSON of real data 
 >Note: this feature is available with `react-scripts@0.3.0` and higher.<br>
 >[Read the migration guide to learn how to enable it in older projects!](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md#migrating-from-023-to-030)
 
-Create React CharactersCards uses [Jest](https://facebook.github.io/jest/) as its test runner. To prepare for this integration, we did a [major revamp](https://facebook.github.io/jest/blog/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
+Create React CharacterCard uses [Jest](https://facebook.github.io/jest/) as its test runner. To prepare for this integration, we did a [major revamp](https://facebook.github.io/jest/blog/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
 
 Jest is a Node-based runner. This means that the tests always run in a Node environment and not in a real browser. This lets us enable fast iteration speed and prevent flakiness.
 
 While Jest provides browser globals such as `window` thanks to [jsdom](https://github.com/tmpvar/jsdom), they are only approximations of the real browser behavior. Jest is intended to be used for unit tests of your logic and your components rather than the DOM quirks.
 
-We recommend that you use a separate tool for browser end-to-end tests if you need them. They are beyond the scope of Create React CharactersCards.
+We recommend that you use a separate tool for browser end-to-end tests if you need them. They are beyond the scope of Create React CharacterCard.
 
 ### Filename Conventions
 
@@ -1287,7 +1287,7 @@ Jest will look for test files with any of the following popular naming conventio
 
 The `.test.js` / `.spec.js` files (or the `__tests__` folders) can be located at any depth under the `src` top level folder.
 
-We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `CharactersCards.test.js` and `CharactersCards.jstersCards.js` are in the same folder, the test just needs to `import CharactersCards from './CharactersCards'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
+We recommend to put the test files (or `__tests__` folders) next to the code they are testing so that relative imports appear shorter. For example, if `CharacterCard.test.js` and `CharacterCard.jstersCards.js` are in the same folder, the test just needs to `import CharacterCard from './CharacterCard'` instead of a long relative path. Colocation also helps find tests more quickly in larger projects.
 
 ### Command Line Interface
 
@@ -1340,7 +1340,7 @@ it('renders without crashing', () => {
 });
 ```
 
-This test mounts a component and makes sure that it didn’t throw during rendering. Tests like this provide a lot of value with very little effort so they are great as a starting point, and this is the test you will find in `src/CharactersCards.test.js`.
+This test mounts a component and makes sure that it didn’t throw during rendering. Tests like this provide a lot of value with very little effort so they are great as a starting point, and this is the test you will find in `src/CharacterCard.test.js`.
 
 When you encounter bugs caused by changing components, you will gain a deeper insight into which parts of them are worth testing in your application. This might be a good time to introduce more specific tests asserting specific expected output or behavior.
 
@@ -1382,7 +1382,7 @@ it('renders without crashing', () => {
 });
 ```
 
-Unlike the previous smoke test using `ReactDOM.render()`, this test only renders `<CharactersCards>` and doesn’t go deeper. For example, even if `<CharactersCards>` itself renders a `<Button>` that throws, this test will pass. Shallow rendering is great for isolated unit tests, but you may still want to create some full rendering tests to ensure the components integrate correctly. Enzyme supports [full rendering with `mount()`](http://airbnb.io/enzyme/docs/api/mount.html), and you can also use it for testing state changes and component lifecycle.
+Unlike the previous smoke test using `ReactDOM.render()`, this test only renders `<CharacterCard>` and doesn’t go deeper. For example, even if `<CharacterCard>` itself renders a `<Button>` that throws, this test will pass. Shallow rendering is great for isolated unit tests, but you may still want to create some full rendering tests to ensure the components integrate correctly. Enzyme supports [full rendering with `mount()`](http://airbnb.io/enzyme/docs/api/mount.html), and you can also use it for testing state changes and component lifecycle.
 
 You can read the [Enzyme documentation](http://airbnb.io/enzyme/) for more testing techniques. Enzyme documentation uses Chai and Sinon for assertions but you don’t have to use them because Jest provides built-in `expect()` and `jest.fn()` for spies.
 
@@ -1455,7 +1455,7 @@ import 'react-testing-library/cleanup-after-each';
 import 'jest-dom/extend-expect';
 ```
 
-Here's an example of using `react-testing-library` and `jest-dom` for testing that the `<CharactersCards />` component renders "Welcome to React".
+Here's an example of using `react-testing-library` and `jest-dom` for testing that the `<CharacterCard />` component renders "Welcome to React".
 
 ```js
 import React from 'react';
@@ -1588,7 +1588,7 @@ script:
 
 #### CircleCI
 
-Follow [this article](https://medium.com/@knowbody/circleci-and-zeits-now-sh-c9b7eebcd3c1) to set up CircleCI with a Create React CharactersCards project.
+Follow [this article](https://medium.com/@knowbody/circleci-and-zeits-now-sh-c9b7eebcd3c1) to set up CircleCI with a Create React CharacterCard project.
 
 ### On your own environment
 ##### Windows (cmd.exe)
@@ -1670,7 +1670,7 @@ Snapshot testing is a feature of Jest that automatically generates text snapshot
 
 ### Editor Integration
 
-If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest extension](https://github.com/orta/vscode-jest) which works with Create React CharactersCards out of the box. This provides a lot of IDE-like features while using a text editor: showing the status of a test run with potential fail messages inline, starting and stopping the watcher automatically, and offering one-click snapshot updates.
+If you use [Visual Studio Code](https://code.visualstudio.com), there is a [Jest extension](https://github.com/orta/vscode-jest) which works with Create React CharacterCard out of the box. This provides a lot of IDE-like features while using a text editor: showing the status of a test run with potential fail messages inline, starting and stopping the watcher automatically, and offering one-click snapshot updates.
 
 ![VS Code Jest Preview](https://cloud.githubusercontent.com/assets/49038/20795349/a032308a-b7c8-11e6-9b34-7eeac781003f.png)
 
@@ -1744,7 +1744,7 @@ For an example, a simple button component could have following states:
 
 Usually, it’s hard to see these states without running a sample app or some examples.
 
-Create React CharactersCards doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
+Create React CharacterCard doesn’t include any tools for this by default, but you can easily add [Storybook for React](https://storybook.js.org) ([source](https://github.com/storybooks/storybook)) or [React Styleguidist](https://react-styleguidist.js.org/) ([source](https://github.com/styleguidist/react-styleguidist)) to your project. **These are third-party tools that let you develop components and see all their states in isolation from your app**.
 
 ![Storybook for React Demo](http://i.imgur.com/7CIAWpB.gif)
 
@@ -1815,7 +1815,7 @@ Learn more about React Styleguidist:
 
 ## Publishing Components to npm
 
-Create React CharactersCards doesn't provide any built-in functionality to publish a component to npm. If you're ready to extract a component from your project so other people can use it, we recommend moving it to a separate directory outside of your project and then using a tool like [nwb](https://github.com/insin/nwb#react-components-and-libraries) to prepare it for publishing.
+Create React CharacterCard doesn't provide any built-in functionality to publish a component to npm. If you're ready to extract a component from your project so other people can use it, we recommend moving it to a separate directory outside of your project and then using a tool like [nwb](https://github.com/insin/nwb#react-components-and-libraries) to prepare it for publishing.
 
 ## Making a Progressive Web CharactersCards
 
@@ -1930,7 +1930,7 @@ will affect your users' experience.
 JavaScript bundles using the source maps. This helps you understand where code
 bloat is coming from.
 
-To add Source map explorer to a Create React CharactersCards project, follow these steps:
+To add Source map explorer to a Create React CharacterCard project, follow these steps:
 
 ```sh
 npm install --save source-map-explorer
@@ -1983,7 +1983,7 @@ serve -h
 
 ### Other Solutions
 
-You don’t necessarily need a static server in order to run a Create React CharactersCards project in production. It works just as fine integrated into an existing dynamic one.
+You don’t necessarily need a static server in order to run a Create React CharacterCard project in production. It works just as fine integrated into an existing dynamic one.
 
 Here’s a programmatic example using [Node](https://nodejs.org/) and [Express](http://expressjs.com/):
 
@@ -2001,9 +2001,9 @@ app.get('/', function (req, res) {
 app.listen(9000);
 ```
 
-The choice of your server software isn’t important either. Since Create React CharactersCards is completely platform-agnostic, there’s no need to explicitly use Node.
+The choice of your server software isn’t important either. Since Create React CharacterCard is completely platform-agnostic, there’s no need to explicitly use Node.
 
-The `build` folder with static assets is the only output produced by Create React CharactersCards.
+The `build` folder with static assets is the only output produced by Create React CharacterCard.
 
 However this is not quite enough if you use client-side routing. Read the next section if you want to support URLs like `/todos/42` in your single-page app.
 
@@ -2054,14 +2054,14 @@ When users install your app to the homescreen of their device the default config
 
 ### Building for Relative Paths
 
-By default, Create React CharactersCards produces a build assuming your app is hosted at the server root.<br>
+By default, Create React CharacterCard produces a build assuming your app is hosted at the server root.<br>
 To override this, specify the `homepage` in your `package.json`, for example:
 
 ```js
   "homepage": "http://mywebsite.com/relativepath",
 ```
 
-This will let Create React CharactersCards correctly infer the root path to use in the generated HTML file.
+This will let Create React CharacterCard correctly infer the root path to use in the generated HTML file.
 
 **Note**: If you are using `react-router@^4`, you can root `<Link>`s using the `basename` prop on any `<Router>`.<br>
 More information [here](https://reacttraining.com/react-router/web/api/BrowserRouter/basename-string).<br>
@@ -2088,7 +2088,7 @@ This will make sure that all the asset paths are relative to `index.html`. You w
 
 See [this](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321) blog post on how to deploy your React app to Microsoft Azure.
 
-See [this](https://medium.com/@strid/host-create-react-app-on-azure-986bc40d5bf2#.pycfnafbg) blog post or [this](https://github.com/ulrikaugustsson/azure-appservice-static) repo for a way to use automatic deployment to Azure CharactersCards Service.
+See [this](https://medium.com/@strid/host-create-react-app-on-azure-986bc40d5bf2#.pycfnafbg) blog post or [this](https://github.com/ulrikaugustsson/azure-appservice-static) repo for a way to use automatic deployment to Azure CharacterCard Service.
 
 ### [Firebase](https://firebase.google.com/)
 
@@ -2184,7 +2184,7 @@ or for a GitHub user page:
   "homepage": "https://myusername.github.io",
 ```
 
-Create React CharactersCards uses the `homepage` field to determine the root URL in the built HTML file.
+Create React CharacterCard uses the `homepage` field to determine the root URL in the built HTML file.
 
 #### Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`
 
@@ -2327,7 +2327,7 @@ To support `pushState`, make sure to create a `public/_redirects` file with the 
 /*  /index.html  200
 ```
 
-When you build the project, Create React CharactersCards will place the `public` folder contents into the build output.
+When you build the project, Create React CharacterCard will place the `public` folder contents into the build output.
 
 ### [Now](https://zeit.co/now)
 
@@ -2469,7 +2469,7 @@ Some third-party packages don't compile their code to ES5 before publishing to n
 To resolve this:
 
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
-  * Note: Create React CharactersCards can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
+  * Note: Create React CharacterCard can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
 
 2. Fork the package and publish a corrected version yourself. 
 

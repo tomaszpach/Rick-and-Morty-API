@@ -4,7 +4,7 @@ import CharacterCard from './Homepage/CharacterCard/CharacterCard';
 import FetchError from "./shared/FetchError";
 import LoadingSpinner from "./shared/LoadingSpinner";
 
-const CharactersCards = ({characters, error, loading}) => {
+const CharactersList = ({characters, error, loading}) => {
     if (error) {
         return <FetchError/>
     } else if (loading) {
@@ -29,4 +29,4 @@ const CharactersCards = ({characters, error, loading}) => {
     )
 };
 
-export default CharactersCards;
+export default CharactersList;

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import CharactersCards from '../components/CharactersCards';
-import CharactersInfo from "../components/Homepage/CharactersInfo/CharactersInfo";
+import CharactersList from '../components/CharactersList';
 import Navigation from "../components/Homepage/Navigation/Navigation";
 
 const API_URL = "https://rickandmortyapi.com/api/character/";
@@ -69,8 +68,7 @@ class RickAndMortyCharactersCards extends Component {
                 <input type="number" min={1} max={this.state.data.pages} value={this.state.page} onChange={(e) => this.updatePage(e)} />
                 <button onClick={() => this.getResultsFromApi()}>change!</button>
                 <Navigation page={page} getResults={(nextPrev) => this.getPageResults(nextPrev)}/>
-                <CharactersInfo info={data} error={error} loading={loading}/>
-                <CharactersCards characters={characters} error={error} loading={loading}/>
+                <CharactersList characters={characters} error={error} loading={loading}/>
             </div>
         )
     }
