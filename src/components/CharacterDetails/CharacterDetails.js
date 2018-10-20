@@ -1,9 +1,9 @@
 import React from 'react';
-import LoadingSpinner from "../shared/LoadingSpinner";
+// import LoadingSpinner from "../shared/LoadingSpinner";
 
 const CharacterDetails = ({loading, character}) => {
     if (loading) {
-        return <LoadingSpinner />
+        // return <LoadingSpinner />
     }
 
     const { image, name, species, gender, status } = character;

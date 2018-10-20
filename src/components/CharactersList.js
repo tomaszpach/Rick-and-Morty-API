@@ -2,13 +2,13 @@ import React from 'react';
 
 import CharacterCard from './Homepage/CharacterCard/CharacterCard';
 import FetchError from "./shared/FetchError";
-import LoadingSpinner from "./shared/LoadingSpinner";
+// import LoadingSpinner from "./shared/LoadingSpinner";
 
 const CharactersList = ({characters, error, loading}) => {
     if (error) {
         return <FetchError/>
     } else if (loading) {
-        return <LoadingSpinner/>
+        // return <LoadingSpinner/>
     }
     return (
         <div className="character-cards-wrapper">
